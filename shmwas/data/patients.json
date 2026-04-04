@@ -1,0 +1,16 @@
+{
+    "PAT-105DAF15": {
+        "patient_id": "PAT-105DAF15",
+        "name": "Arthur morgan",
+        "age": 40,
+        "gender": "m",
+        "blood_group": "0+",
+        "height": 180.0,
+        "weight": 80.0,
+        "chronic_conditions": [
+            "Dutch Van Der Linde Syndrome",
+            "Tubercolosis"
+        ],
+        "allergies": []
+    }
+}
