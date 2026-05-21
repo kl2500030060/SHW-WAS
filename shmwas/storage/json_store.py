@@ -1,4 +1,4 @@
-# storage/json_store.py
+
 import json
 import os
 
@@ -9,7 +9,7 @@ def save_patient(patient_dict):
     os.makedirs("data", exist_ok=True)
     patients = load_all_patients()
     
-    # Use patient_id as the primary key for O(1) lookups
+
     patients[patient_dict["patient_id"]] = patient_dict
     
     try:
@@ -27,7 +27,7 @@ def load_all_patients():
         with open(PATIENTS_FILE, 'r') as f:
             return json.load(f)
     except (json.JSONDecodeError, IOError):
-        # Return an empty dict if the file is empty or corrupted
+
         return {}
 
 def get_patient(patient_id):
