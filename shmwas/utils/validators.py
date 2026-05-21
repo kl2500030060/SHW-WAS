@@ -1,4 +1,4 @@
-# utils/validators.py
+
 from utils.exceptions import InvalidInputError
 
 def validate_positive_number(value, field_name):
