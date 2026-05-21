@@ -1,4 +1,4 @@
-# storage/csv_store.py
+
 import csv
 import os
 
@@ -16,7 +16,7 @@ def log_vitals(vitals_list):
     try:
         with open(VITALS_FILE, mode='a', newline='') as f:
             writer = csv.writer(f)
-            # Inject headers only if the file was just created
+
             if not file_exists:
                 writer.writerow(VITALS_HEADERS)
             writer.writerow(vitals_list)
