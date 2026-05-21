@@ -1,4 +1,4 @@
-# analysis/vital_trends.py
+
 import numpy as np
 import pandas as pd
 import os
@@ -15,19 +15,18 @@ def detect_vital_anomalies(patient_id):
     if patient_data.empty:
         return "No vitals recorded for this patient yet."
 
-    # Convert Pandas Series to NumPy arrays for fast vectorized operations
+
     systolic_arr = patient_data["Systolic"].to_numpy()
     heart_rate_arr = patient_data["HeartRate"].to_numpy()
 
-    # NumPy Statistical Analysis
+
     sys_mean = np.mean(systolic_arr)
     sys_std = np.std(systolic_arr)
     
     hr_mean = np.mean(heart_rate_arr)
     hr_std = np.std(heart_rate_arr)
 
-    # Vectorized condition: Flag anomalies that are > 1 standard deviation above mean
-    # Adding a tiny epsilon (0.01) prevents issues if standard deviation is 0
+
     sys_spikes = np.sum(systolic_arr > (sys_mean + sys_std + 0.01))
     hr_spikes = np.sum(heart_rate_arr > (hr_mean + hr_std + 0.01))
 
