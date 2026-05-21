@@ -1,4 +1,4 @@
-# utils/exceptions.py
+
 
 class MedicalRecordError(Exception):
     """Base exception class for SHM-WAS."""

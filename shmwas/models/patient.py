@@ -1,4 +1,4 @@
-# models/patient.py
+
 from utils.id_generator import generate_id
 
 class Patient:
@@ -8,10 +8,10 @@ class Patient:
         self.age = age
         self.gender = gender
         self.blood_group = blood_group
-        self.height = height  # in cm
-        self.weight = weight  # in kg
+        self.height = height  
+        self.weight = weight  
         
-        # Using Sets to ensure unique entries (Week 5)
+
         self.chronic_conditions = set()
         self.allergies = set()
 
@@ -26,7 +26,7 @@ class Patient:
         return round(self.weight / (height_m ** 2), 2)
 
     def to_dict(self):
-        # Convert sets to lists for JSON serialization later
+     
         data = self.__dict__.copy()
         data['chronic_conditions'] = list(self.chronic_conditions)
         data['allergies'] = list(self.allergies)

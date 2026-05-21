@@ -1,11 +1,11 @@
-# models/record.py
+
 from utils.date_utils import get_current_timestamp
 
 class ClinicalRecord:
     """Base class for all medical records demonstrating Inheritance."""
     
     def __init__(self, patient_id):
-        # Protected attribute demonstrating Encapsulation
+    
         self._patient_id = patient_id  
         self.timestamp = get_current_timestamp()
 

@@ -1,4 +1,4 @@
-# models/vitals.py
+
 from models.record import ClinicalRecord
 from utils.exceptions import CriticalVitalError
 
@@ -6,7 +6,7 @@ class VitalsRecord(ClinicalRecord):
     """Demonstrates Inheritance from ClinicalRecord."""
     
     def __init__(self, patient_id, systolic, diastolic, heart_rate, sugar, temp):
-        super().__init__(patient_id) # Call the parent constructor
+        super().__init__(patient_id)
         self.systolic = systolic
         self.diastolic = diastolic
         self.heart_rate = heart_rate
@@ -16,7 +16,7 @@ class VitalsRecord(ClinicalRecord):
 
     def _evaluate_vitals(self):
         """Encapsulated internal logic for health checks."""
-        # Using our custom exception from Week 9
+      
         if self.systolic > 200 or self.diastolic > 120:
             raise CriticalVitalError("Blood Pressure", f"{self.systolic}/{self.diastolic}")
         
@@ -33,6 +33,6 @@ class VitalsRecord(ClinicalRecord):
         return f"Vitals for {self._patient_id}: BP {self.systolic}/{self.diastolic}, Status: {self.status}"
 
     def to_list(self):
-        # Returns flat data for CSV storage
+     
         return [self._patient_id, self.timestamp, self.systolic, self.diastolic, 
                 self.heart_rate, self.sugar, self.temperature, self.status]

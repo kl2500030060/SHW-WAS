@@ -1,4 +1,4 @@
-# main.py
+
 import os
 from models.patient import Patient
 from models.vitals import VitalsRecord
@@ -25,7 +25,7 @@ def register_patient_ui():
         
         patient = Patient(name, age, gender, blood_group, height, weight)
         
-        # Adding conditions to demonstrate the Week 5 'Sets' feature
+    
         conditions = input("Enter any chronic conditions (comma separated, or press Enter to skip): ")
         if conditions:
             for cond in conditions.split(','):
@@ -49,7 +49,7 @@ def record_vitals_ui():
         sugar = validate_positive_number(input("Blood Sugar (mg/dL): "), "Blood Sugar")
         temp = validate_positive_number(input("Body Temp (F): "), "Temperature")
         
-        # This will trigger our Custom Exception if vitals are too high!
+  
         record = VitalsRecord(pid, sys, dia, hr, sugar, temp)
         
         log_vitals(record.to_list())
@@ -120,7 +120,7 @@ def main():
         input("\nPress Enter to return to the main menu...")
 
 if __name__ == "__main__":
-    # Ensure root data directories exist before starting
+
     os.makedirs("data", exist_ok=True)
     os.makedirs("exports", exist_ok=True)
     main()
